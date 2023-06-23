@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  min-height: 2000px;
+  font-family: sans-serif;
+  color: #232323;
+  background-color: white;
+}
+
+header {
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+header .navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5%;
+}
+
+header .navbar .logo a img {
+  padding-left: 0.5%;
+  width: 20rem;
+  height: 3.5rem;
+}
+
+header .navbar form input[type="search"],
+header .navbar form input[type="submit"] {
+  background-color: #ffffff38;
+  border: 0.1rem solid #cecece;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+.navbar-nav {
+  width: 100%;
+  height: auto;
+  background-color: #315494;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5%;
+}
+
+.menu-utama {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+}
+
+.menu-profil {
+  font-size: small;
+}
+
+.menu-utama > ul,
+.menu-profil > ul,
+.bagian3 > ul {
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu-utama > ul > li,
+.menu-profil > ul > li {
+  display: inline-block;
+}
+
+.menu-utama > ul > li a,
+.menu-profil > ul > li a {
+  display: block;
+  color: white;
+  padding: 15px;
+}
+
+.menu-utama > ul > li a:hover,
+.menu-profil > ul > li a:hover {
+  background-color: #27366a;
+}
+
+.menu-utama > ul > li:hover .drop,
+.menu-profil > ul > li:hover .drop {
+  display: block;
+}
+
+.drop {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  display: none;
+}
+
+.drop > li > a {
+  color: white;
+  display: block;
+  padding: 15px;
+  background-color: #315494;
+}
+
+.drop li:hover > a,
+.drop li:hover > a {
+  background-color: #27366a;
+}
+
+.landingPage {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+  padding: 5% 5%;
+}
+
+.landingPage .des {
+  background-image: url(../images/Gambar1.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto 78%;
+  width: 100%;
+  height: 100vh;
+  padding: 15% 0%;
+}
+
+.landingPage .des h1 {
+  font-size: 4rem;
+  width: 44rem;
+  color: #232323;
+}
+
+.landingPage .des p {
+  font-size: 2rem;
+  margin-top: 2rem;
+  width: 44rem;
+}
+
+.bagian2 {
+  background-color: #315494;
+  color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5%;
+}
+
+.bagian2 h2 {
+  font-size: 3.5rem;
+  width: 75%;
+}
+
+.bagian2 p {
+  font-size: 1.5rem;
+  width: 55%;
+}
+
+.bagian3 .isi {
+  display: flex;
+}
+
+.bagian3 .isi img {
+  flex: content;
+}
+
+@media (max-width: 768px) {
+  .bagian3 {
+    flex-direction: column;
+  }
+
+  .bagian3 ul {
+    justify-content: flex-start;
+  }
+
+  .bagian3 .des2 {
+    text-align: left;
+    margin-top: 1rem;
+  }
+}

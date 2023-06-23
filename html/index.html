@@ -4,62 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beranda</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <header>
+    <header>
+      <nav class="navbar">
         <div class="logo">
           <a href="index.html">
             <img src="../images/Logo.png" alt="Logo" width="364" height="46" />
           </a>
         </div>
-        <div clas="pencarian">
-          <form>
-            <input type="search" name="search" placeholder="search site..." />
-            <input type="submit" value=">" />
-          </form>
-        </div>
-        <div class="clearfix"></div>
-        <!--navbar start-->
-        <nav class="main-menu">
+        <form>
+          <input type="search" name="search" placeholder="search site..." />
+          <input type="submit" value=">" />
+        </form>
+      </nav>
+      <nav class="navbar-nav">
+        <div class="menu-utama">
           <ul>
             <li><a href="#">Beranda</a></li>
+          </ul>
+          <ul>
             <li><a href="#">Tentang Kami</a></li>
-            <li><a href="#">testimoni</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Testimoni</a></li>
+          </ul>
+          <ul>
             <li>
               <a href="#">Keuangan</a>
-              <ul>
+              <ul class="drop">
                 <li><a href="#">Pengeluaran</a></li>
                 <li><a href="#">Pemasukan</a></li>
                 <li><a href="#">Tabungan</a></li>
                 <li><a href="#">Utang</a></li>
               </ul>
             </li>
+          </ul>
+          <ul>
             <li>
               <a href="#">Bantuan</a>
-              <ul>
+              <ul class="drop">
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Kontak Kami</a></li>
               </ul>
             </li>
           </ul>
-          <ul>
-            <li><a href="#">Login/Daftar</a></li>
-          </ul>
-        </nav>
-        <!--navbar end-->
-      </header>
-      <section class="landingPage">
-        <div class="deskripsiLandingPage">
-          <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
-            laudantium ipsam voluptates harum nisi numquam at repudiandae
-            perspiciatis corporis tenetur! A!
-          </p>
         </div>
-        <img src="images/Gambar1.jpg" alt="Gambar1" width="533" height="440" />
-      </section>
+        <div class="menu-profil">
+          <ul>
+            <li>
+              <a href="#">Profil</a>
+              <ul class="drop">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Daftar</a></li>
+                <li><a href="#">Keluar</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section id="Beranda" class="landingPage">
+      <div class="des">
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsa amet
+          id sed dolorum, quibusdam vel asperiores dicta beatae, rem
+          accusantium?
+        </p>
+      </div>
+    </section>
+    <div id="bagian2" class="bagian2">
+      <h2>Lorem ipsum dolor sit.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nobis vel
+        placeat autem quis dolor corrupti cupiditate deserunt ipsum libero!
+      </p>
+    </div>
+    <section class="bagian3">
+      <div class="isi">
+        <img src="../images/gambar2.png" alt="Gambar" />
+      </div>
+      <div class="content">
+        <h3>Kelebihan website</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+      </div>
+    </section>
+  </body>
+</html>
+<!--
       <section class="bagianDua">
         <h2>Lorem ipsum dolor sit.</h2>
         <p>
@@ -68,7 +102,7 @@
         </p>
       </section>
       <section class="bagianTiga">
-        <img src="images/gambar2.png" alt="Gambar2" />
+        <img src="../images/gambar2.png" alt="Gambar2" />
         <div class="desBagTiga">
           <h6>Lorem, ipsum dolor.</h6>
           <h3>Lorem, ipsum.</h3>
@@ -84,7 +118,7 @@
       <section class="Testimoni">
         <div class="profilUser">
           <img
-            src="images/fotoprofile.png"
+            src="../images/fotoprofile.png"
             alt="fotoProfile"
             width="66"
             height="64"
@@ -104,7 +138,7 @@
       </section>
       <footer>
         <div class="footer-box">
-          <img src="images/Logo.png" alt="logo" width="364" height="46" />
+          <img src="../images/Logo.png" alt="logo" width="364" height="46" />
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae,
             numquam?
@@ -142,8 +176,6 @@
         </div>
       </footer>
       <p><small>Hak Cipta &copy; 2023. Hak Cipta Dilindungi</small></p>
-    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.cycle2.js"></script>
-  </body>
-</html>
+  </body> -->
