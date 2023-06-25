@@ -8,7 +8,7 @@
 
 body {
   width: 100%;
-  min-height: 3500px;
+  height: auto;
   font-family: sans-serif;
   color: #232323;
   background-color: white;
@@ -300,6 +300,7 @@ header .navbar form input[type="submit"] {
   align-items: flex-start; /* Mengatur konten di atas menjadi sejajar menyamping */
   width: 100%;
   padding-left: 2em;
+  padding-top: 4em;
 }
 
 .main-footer .info-footer {
@@ -319,7 +320,7 @@ header .navbar form input[type="submit"] {
 }
 
 .main-footer .footer-grup {
-  display: flex; /* Menjadikan kotak footer grup sebagai flex container */
+  display: flex;
   gap: 2em; /* Memberikan jarak antar kotak footer */
   padding-right: 4em;
 }
@@ -343,6 +344,26 @@ header .navbar form input[type="submit"] {
   color: #232323;
 }
 /* Footer section end */
+
+.garisAtas {
+  width: 100%;
+  height: 1.5px;
+  background-color: #aaaaaa;
+  margin-top: 10em; /* Ruang kosong di atas garis */
+  margin-bottom: 20px; /* Ruang kosong di bawah garis */
+}
+
+.HakCipta {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HakCipta p {
+  margin: 0;
+  margin-bottom: 4em;
+}
 
 @media (max-width: 768px) {
   .bagian3 {
