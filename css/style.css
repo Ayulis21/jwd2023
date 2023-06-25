@@ -293,27 +293,39 @@ header .navbar form input[type="submit"] {
 }
 /* Testimoni Section end */
 
-/* Footer section start*/
+/* Footer section start */
 .main-footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start; /* Mengatur konten di atas menjadi sejajar menyamping */
   width: 100%;
+  padding-left: 2em;
 }
 
 .main-footer .info-footer {
+  flex: 1;
+  padding: 4em 0.1em; /* Agar konten di sebelah kiri meregang dan memanfaatkan ruang yang tersedia */
 }
 
 .main-footer .info-footer img {
+  max-width: 100%; /* Agar gambar logo tidak melebihi lebar kontainer */
 }
 
 .main-footer .info-footer p {
   margin-left: 0.4em;
-  width: 20em;
+  width: 25em;
+  margin-top: 0.8em;
+  line-height: 1.5em;
+}
+
+.main-footer .footer-grup {
+  display: flex; /* Menjadikan kotak footer grup sebagai flex container */
+  gap: 2em; /* Memberikan jarak antar kotak footer */
+  padding-right: 4em;
 }
 
 .main-footer .footer-box {
-  padding: 4em 8.4em;
+  padding: 4em 4.4em;
   font: 1em;
 }
 
