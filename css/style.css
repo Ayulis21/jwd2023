@@ -8,7 +8,7 @@
 
 body {
   width: 100%;
-  min-height: 2000px;
+  min-height: 3000px;
   font-family: sans-serif;
   color: #232323;
   background-color: white;
@@ -117,34 +117,33 @@ header .navbar form input[type="submit"] {
 }
 
 .landingPage {
-  background-color: white;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  margin-top: 0;
-  padding: 5% 5%;
-}
-
-.landingPage .des {
   background-image: url(../images/Gambar1.png);
   background-repeat: no-repeat;
   background-position: right;
   background-size: auto 78%;
-  width: 100%;
+  background-position-y: 80%;
   height: 100vh;
-  padding: 15% 0%;
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+  padding: 10% 5%;
+}
+
+.landingPage .des {
+  width: 100%;
+  padding: 8% 0%;
 }
 
 .landingPage .des h1 {
   font-size: 4rem;
-  width: 44rem;
   color: #232323;
+  width: 44rem;
 }
 
 .landingPage .des p {
   font-size: 2rem;
   margin-top: 2rem;
-  width: 44rem;
+  width: 46rem;
 }
 
 .bagian2 {
@@ -170,12 +169,121 @@ header .navbar form input[type="submit"] {
   width: 55%;
 }
 
-.bagian3 .isi {
+.bagian3 {
   display: flex;
+  justify-content: left;
+  align-items: normal;
 }
 
-.bagian3 .isi img {
-  flex: content;
+.bagian3 .gambar2 {
+}
+
+.bagian3 .gambar2 img {
+}
+
+.bagian3 .content {
+  width: 100%;
+  position: relative;
+  margin-top: 12%;
+  margin-left: 3%;
+  font-size: 1.8em;
+}
+
+.bagian3 .content h6 {
+  color: #315494;
+}
+
+.bagian3 .content h3 {
+  margin-top: 1%;
+}
+
+.bagian3 .content ul {
+  margin-top: 2.9%;
+  font-size: 1.5em;
+}
+
+.bagian3 .content ul li {
+  font-size: 0.6em;
+  margin-top: 1%;
+  width: 100%;
+}
+
+.testimoni-section {
+  background-color: #cecece;
+  justify-content: center;
+  height: auto;
+  margin: 0% 1em;
+  text-align: center;
+}
+
+.testimoni-section .judulParagraf {
+  padding-top: 2em;
+  margin-bottom: 2rem;
+}
+
+.testimoni-section .judulParagraf h2 {
+  font-size: 2rem;
+}
+
+.testimoni-section .judulParagraf p {
+  font-size: 1.2rem;
+  margin-top: 1.5em;
+  padding: 0 6em;
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.testimoni-section .testimoni-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4em;
+  padding-top: 4em;
+}
+
+.testimoni-section .testimoni-container .testimoni-con {
+  background-color: #ffffff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  margin: 0% 3.5em;
+  width: 40%;
+  height: 30em;
+}
+
+.testimoni-con .user-testimoni {
+  justify-content: left;
+  display: flex;
+  padding: 4%;
+}
+
+.testimoni-con .user-testimoni img {
+  border-radius: 100%;
+}
+
+.user-testimoni .user-info {
+  text-align: left;
+  padding: 0% 2%;
+}
+
+.user-info h3 {
+}
+
+.user-info p {
+  height: auto;
+}
+
+.testimoni-con .testimoni-content {
+  padding: 4rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.testimoni-content h4 {
+  font-size: 2em;
+}
+
+.testimoni-content p {
+  padding-top: 2em;
+  font-size: 1.5em;
 }
 
 @media (max-width: 768px) {
@@ -192,3 +300,4 @@ header .navbar form input[type="submit"] {
     margin-top: 1rem;
   }
 }
+/*   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
