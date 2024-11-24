@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stok Tahu Matang</title>
+    <style>
+      :root {
+        --primary: #27366a;
+        --bg: white;
+      }
+      body {
+        background-color: var(--bg);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: var(--primary);
+      }
+
+      .update-button,
+      .delete-button {
+        padding: 4px 8px;
+        background-color: var(--primary);
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+
+      .add-button {
+        padding: 4px 8px;
+        background-color: var(--primary);
+        color: black;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        margin-top: 20px;
+      }
+
+      .form-container {
+        display: none;
+        margin-bottom: 10px;
+      }
+
+      .data-table {
+        color: white;
+      }
+
+      .form-container input[type="text"] {
+        width: 200px;
+        padding: 5px;
+      }
+
+      .form-container input[type="number"] {
+        width: 80px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="javascript:history.back()" class="button">Kembali</a>
+
+    <h2>Pengeluaran Keuangan</h2>
+
+    <button class="add-button" onclick="showForm()">Tambah Data Baru</button>
+    <div class="form-container">
+      <input
+        type="date"
+        id="inputTanggalPengeluaran"
+        placeholder="Tanggal Pengeluaran"
+      />
+      <input
+        type="text"
+        id="inputNamaPengeluaran"
+        placeholder="Nama Pengeluaran"
+      />
+      <input type="number" id="inputNominal" placeholder="Nominal" />
+      <input type="text" id="inputKeterangan" placeholder="Keterangan" />
+      <button onclick="addNewData()">Simpan</button>
+    </div>
+
+    <table id="data-table">
+      <tr>
+        <th>Tanggal Pengeluaran</th>
+        <th>Nama Pengeluaran</th>
+        <th>Nominal</th>
+        <th>Keterangan</th>
+      </tr>
+    </table>
+
+    <script>
+      var pengeluaranKeuangan = [
+        {
+          tanggalPengeluaran: "2023-07-01",
+          namaPengeluaran: "uang saku",
+          nominal: 200000,
+          keterangan: saldo,
+        },
+        {
+          tanggalPengeluaran: "2023-07-01",
+          namaPengeluaran: "uang saku",
+          nominal: 200000,
+          keterangan: saldo,
+        },
+        {
+          tanggalPengeluaran: "2023-07-01",
+          namaPengeluaran: "uang saku",
+          nominal: 200000,
+          keterangan: saldo,
+        },
+        {
+          tanggalPengeluaran: "2023-07-01",
+          namaPengeluaran: "uang saku",
+          nominal: 200000,
+          keterangan: saldo,
+        },
+      ];
+
+      // ... kode sebelumnya
+
+      // Fungsi untuk menampilkan data ke dalam tabel
+      function renderTable() {
+        var table = document.getElementById("data-table");
+        table.innerHTML = "";
+
+        var headerRow = table.insertRow(0);
+        var headers = [
+          "Tanggal Pengeluaran",
+          "Nama Pengeluaran",
+          "Nominal",
+          "Keterangan",
+          "Action",
+        ];
+
+        for (var i = 0; i < headers.length; i++) {
+          var headerCell = document.createElement("th");
+          headerCell.innerHTML = headers[i];
+          headerRow.appendChild(headerCell);
+        }
+
+        for (var i = 0; i < pengeluaranKeuangan.length; i++) {
+          var data = pengeluaranKeuangan[i];
+          var row = table.insertRow(i + 1);
+
+          for (var key in data) {
+            var cell = row.insertCell();
+            cell.innerHTML = data[key];
+          }
+
+          var actionCell = row.insertCell();
+          actionCell.innerHTML =
+            '<button class="update-button" onclick="showUpdateForm(' +
+            i +
+            ')">Update</button>' +
+            '<button class="delete-button" onclick="deleteData(' +
+            i +
+            ')">Delete</button>';
+        }
+      }
+
+      // Fungsi untuk menambahkan data baru
+      function addNewData() {
+        var tanggalPengeluaran = parseInt(
+          document.getElementById("inputTanggalPengeluaran").value
+        );
+        var namaPengeluaran = parseInt(
+          document.getElementById("inputNamaPengeluaran").value
+        );
+        var nominal = document.getElementById("inputNominal").value;
+        var keterangan = parseInt(
+          document.getElementById("inputKeterangan").value
+        );
+
+        var newData = {
+          tanggalPengeluaran: tanggalPengeluaran,
+          namaPengeluaran: namaPengeluaran,
+          nominal: nominal,
+          keterangan: keterangan,
+        };
+
+        pengeluaranKeuangan.push(newData);
+        renderTable();
+        clearForm();
+      }
+
+      // Fungsi untuk menampilkan form tambah data baru
+      function showForm() {
+        var formContainer = document.querySelector(".form-container");
+        formContainer.style.display = "block";
+      }
+
+      // Fungsi untuk menampilkan form update data
+      function showUpdateForm(index) {
+        var formContainer = document.querySelector(".form-container");
+        formContainer.style.display = "block";
+
+        var data = pengeluaranKeuangan[index];
+        document.getElementById("inputTanggalPengeluaran").value =
+          data.tanggalPengeluaran;
+        document.getElementById("inputNamaPengeluaran").value =
+          data.namaPengeluaran;
+        document.getElementById("inputNominal").value = data.nominal;
+        document.getElementById("inputKeterangan").value = data.keterangan;
+        var saveButton = document.querySelector(".form-container button");
+        saveButton.onclick = function () {
+          updateData(index);
+        };
+      }
+
+      // Fungsi untuk update data
+      function updateData(index) {
+        var tanggalPengeluaran = parseInt(
+          document.getElementById("inputTanggalPengeluaran").value
+        );
+        var namaPengeluaran = parseInt(
+          document.getElementById("inputNamaPengeluaran").value
+        );
+        var nominal = document.getElementById("inputNominal").value;
+        var keterangan = parseInt(
+          document.getElementById("inputKeterangan").value
+        );
+
+        var updatedData = {
+          tanggalPengeluaran: tanggalPengeluaran,
+          namaPengeluaran: namaPengeluaran,
+          nominal: nominal,
+          keterangan: keterangan,
+        };
+
+        pengeluaranKeuangan[index] = updatedData;
+        renderTable();
+        clearForm();
+      }
+
+      // Fungsi untuk menghapus data
+      function deleteData(index) {
+        pengeluaranKeuangan.splice(index, 1);
+        renderTable();
+      }
+
+      // Fungsi untuk membersihkan form
+      function clearForm() {
+        document.getElementById("inputtanggalPengeluaran").value = "";
+        document.getElementById("inputNamaPengeluaran").value = "";
+        document.getElementById("inputNominal").value = "";
+        document.getElementById("inputKeterangan").value = "";
+
+        var saveButton = document.querySelector(".form-container button");
+        saveButton.onclick = addNewData;
+      }
+
+      // Memanggil fungsi renderTable untuk menampilkan data awal
+      renderTable();
+    </script>
+  </body>
+</html>

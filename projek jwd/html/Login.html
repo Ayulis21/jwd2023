@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tampilan Daftar Akun</title>
+    <link rel="stylesheet" type="text/css" href="../css/Daftar.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navigasi start -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../images/Logo.png" alt="Logo" width="364" height="46" />
+          </a>
+        </div>
+        <div class="menu-container">
+          <div class="menu-utama">
+            <ul>
+              <li><a href="index.html">Beranda</a></li>
+            </ul>
+            <ul>
+              <li>
+                <a href="#">Profil</a>
+                <ul class="drop">
+                  <li><a href="Login.html">Login</a></li>
+                  <li><a href="daftar.html">Daftar</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="daftar-akun">
+        <div class="left-side">
+          <h3>KosCashFlow</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+            eligendi aliquam, velit voluptatem earum placeat iste dolore quas
+            expedita, enim eaque reprehenderit ipsa. Unde, mollitia?
+          </p>
+        </div>
+        <div class="right-side">
+          <h2>Login Akun</h2>
+          <form>
+            <input type="email" name="email" placeholder="email" required />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="garisAtas"></div>
+    <!-- Footer section start -->
+    <footer class="main-footer">
+      <div class="info-footer">
+        <img
+          src="../images/Logo.png"
+          alt="Gambar logo"
+          width="325"
+          height="50"
+        />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis rem
+          laboriosam animi ab amet suscipit?
+        </p>
+      </div>
+      <div class="footer-grup">
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer section end -->
+    <div class="garisAtas"></div>
+    <div class="HakCipta">
+      <p>Hak Cipta &copy; 2023. Hak Cipta Dilindungi</p>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
+    <script>
+      // Get the login form element
+      const loginForm = document.querySelector(".daftar-akun form");
+
+      // Add event listener to the login form submit event
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the username and password values
+        const username = document.querySelector('input[name="email"]').value;
+        const password = document.querySelector('input[name="password"]').value;
+
+        // Perform login validation here
+        if (email === "ayulistiyowati3@gmail.com" && password === "12345") {
+          // Redirect to the home page
+          window.location.href = "Beranda.html";
+        } else {
+          // Show error message or perform other actions for invalid login
+          alert("Invalid username or password. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Data</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navigasi start -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../images/Logo.png" alt="Logo" width="364" height="46" />
+          </a>
+        </div>
+        <form action="#" method="POST">
+          <input type="search" name="search" placeholder="search site..." />
+          <input type="submit" value=">" />
+        </form>
+      </nav>
+      <nav class="navbar-nav">
+        <div class="menu-utama">
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+          </ul>
+          <ul>
+            <li><a href="#Testimoni">Testimoni</a></li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Keuangan</a>
+              <ul class="drop">
+                <li><a href="#">Pengeluaran</a></li>
+                <li><a href="pemasukan.html">Pemasukan</a></li>
+                <li><a href="#">Tabungan</a></li>
+                <li><a href="#">Utang</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Bantuan</a>
+              <ul class="drop">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Kontak Kami</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-profil">
+          <ul>
+            <li>
+              <a href="#">Profil</a>
+              <ul class="drop">
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="daftar.html">Daftar</a></li>
+                <li><a href="#">Keluar</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Navigasi end -->
+
+    <!-- Tabel input data -->
+
+    <h2 class="pengeluaran">Pengeluaran Keuangan</h2>
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Tanggal Pemasukan</th>
+          <th>Nama Pemasukan</th>
+          <th>Nominal</th>
+          <th>Keterangan</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Form tambah data -->
+    <div class="form-container">
+      <input
+        type="text"
+        id="inputTanggalPemasukan"
+        placeholder="Tanggal Pemasukan"
+      />
+      <input type="text" id="inputNamaPemasukan" placeholder="Nama Pemasukan" />
+      <input type="number" id="inputNominal" placeholder="Nominal" />
+      <input type="text" id="inputKeterangan" placeholder="Keterangan" />
+      <button onclick="addNewData()">Simpan</button>
+    </div>
+
+    <script>
+      // Data awal
+      var pemasukanData = [
+        {
+          tanggal: "2023-07-01",
+          nama: "Pemasukan 1",
+          nominal: 100000,
+          keterangan: "Saldo",
+        },
+        {
+          tanggal: "2023-07-02",
+          nama: "Pemasukan 2",
+          nominal: 150000,
+          keterangan: "Tunai",
+        },
+        {
+          tanggal: "2023-07-03",
+          nama: "Pemasukan 3",
+          nominal: 200000,
+          keterangan: "Saldo",
+        },
+      ];
+
+      // Fungsi untuk menampilkan data ke dalam tabel
+      function renderTable() {
+        var table = document.getElementById("data-table");
+        var tbody = table.getElementsByTagName("tbody")[0];
+        tbody.innerHTML = "";
+
+        for (var i = 0; i < pemasukanData.length; i++) {
+          var data = pemasukanData[i];
+          var row = tbody.insertRow(i);
+
+          var tanggalCell = row.insertCell(0);
+          tanggalCell.textContent = data.tanggal;
+
+          var namaCell = row.insertCell(1);
+          namaCell.textContent = data.nama;
+
+          var nominalCell = row.insertCell(2);
+          nominalCell.textContent = data.nominal;
+
+          var keteranganCell = row.insertCell(3);
+          keteranganCell.textContent = data.keterangan;
+
+          var actionCell = row.insertCell(4);
+          var deleteButton = document.createElement("button");
+          deleteButton.textContent = "Hapus";
+          deleteButton.setAttribute("onclick", "deleteData(" + i + ")");
+          actionCell.appendChild(deleteButton);
+        }
+      }
+
+      // Fungsi untuk menambahkan data baru
+      function addNewData() {
+        var tanggal = document.getElementById("inputTanggalPemasukan").value;
+        var nama = document.getElementById("inputNamaPemasukan").value;
+        var nominal = document.getElementById("inputNominal").value;
+        var keterangan = document.getElementById("inputKeterangan").value;
+
+        var newData = {
+          tanggal: tanggal,
+          nama: nama,
+          nominal: nominal,
+          keterangan: keterangan,
+        };
+
+        pemasukanData.push(newData);
+        renderTable();
+
+        // Reset form
+        document.getElementById("inputTanggalPemasukan").value = "";
+        document.getElementById("inputNamaPemasukan").value = "";
+        document.getElementById("inputNominal").value = "";
+        document.getElementById("inputKeterangan").value = "";
+      }
+
+      // Fungsi untuk menghapus data
+      function deleteData(index) {
+        pemasukanData.splice(index, 1);
+        renderTable();
+      }
+
+      // Memanggil fungsi renderTable saat halaman dimuat
+      renderTable();
+    </script>
+
+    <!-- Footer section start -->
+    <footer class="main-footer">
+      <div class="info-footer">
+        <img
+          src="../images/Logo.png"
+          alt="Gambar logo"
+          width="325"
+          height="50"
+        />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis rem
+          laboriosam animi ab amet suscipit?
+        </p>
+      </div>
+      <div class="footer-grup">
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+        <div class="footer-box">
+          <h3>Perusahaan</h3>
+          <ul>
+            <li><a href="#Home">Beranda</a></li>
+            <li><a href="#About">Tentang Kami</a></li>
+            <li><a href="#Testimoni">Testimoni</a></li>
+            <li><a href="#Keuangan">Keuangan</a></li>
+            <li><a href="#Bantuan">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer section end -->
+    <div class="garisAtas"></div>
+    <div class="HakCipta">
+      <p>Hak Cipta &copy; 2023. Hak Cipta Dilindungi</p>
+    </div>
+  </body>
+</html>
